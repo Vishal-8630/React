@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
+
+// ----------------------- Variables ---------------------- 
+
+// Margin and Padding
+$base-padding: 1em;
+$medium-padding: 1.5em;
+$large-padding: 2em;
+
+$base-margin: 1em;
+$medium-margin: 1.5em;
+$large-margin: 4em;
+
+// Font sizes
+$base-font-size: 1.3rem;
+$medium-font-size: 1.7rem;
+$large-font-size: 2rem;
+
+$background-color: rgba(20, 20, 20, 0.9);
+$base-font-family: 'Poppins';
+
+// Breakpoints
+$breakpoint-tablet: 700px;
+$breakpoint-desktop: 1200px;
+
+$box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.7);
+$border-radius: 10px;
+
+$marker-color: rgb(100, 211, 255);
+
+// -------------------- Reset Styles -------------------------
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $base-font-family;
+    box-sizing: border-box;
+}
+
+// ----------------- Mixins ------------------ 
+@mixin flex-styles($direction: column, $justify: center, $align: center, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+// BreakPoint Mixins
+
+@mixin tablet {
+    @media (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+// ------------------- Layout Styles ------------------------
+
+.container {
+    width: 90%;
+    min-height: 90vh;
+    margin: 50px auto;
+    background-color: $background-color;
+    color: white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    position: relative;
+    min-width: 450px;
+
+    @include desktop {
+        width: 100%;
+        max-width: 75rem;
+    }
+}
+
+// ------------------ Header Related Styles ------------------
+.navbar {
+
+    @include flex-styles(row, space-between, center);
+    box-shadow: $box-shadow;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    margin-bottom: 50px;
+    padding: $base-padding;
+
+    @include tablet {
+        padding: $base-padding $medium-padding;
+    }
+
+    @include desktop() {
+        padding: $base-padding $large-padding;
+    }
+
+    &__logo {
+        width: 33%;
+    }
+    
+    &__heading {
+        font-size: $base-font-size;
+
+        @include tablet {
+            font-size: $medium-font-size;
+        }
+
+        @include desktop {
+            font-size: $large-font-size;
+        }
+    }
+}
+
+
+// --------------------------- Main Content Styles --------------------------
+
+.main {
+
+        padding: $base-padding;
+        line-height: 3em;
+        margin: $large-margin 0 $large-margin $medium-margin;
+
+        @include tablet {
+            padding: 0 $medium-padding;
+        }
+
+        @include desktop {
+            padding: 0 $large-padding;
+        }
+
+        &__heading {
+            font-size: $large-font-size * 1.5;
+        }
+
+        &__list {
+            margin: $medium-margin 0 $large-margin $medium-margin;
+
+            &__items {
+                font-size: $base-font-size;
+
+                @include tablet {
+                    font-size: $medium-font-size;
+                }
+
+                @include desktop {
+                    font-size: $large-font-size;
+                }
+
+                &::marker {
+                    color: $marker-color;
+                    font-size: 1.2em;
+                }
+            }
+        }
+}
+
+// -------------------- Footer Styles -------------------------
+
+.footer {
+    @include flex-styles(column, center, center, 15px);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    box-shadow: $box-shadow;
+    padding: $base-padding 0;
+    font-size: $base-font-size;
+
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    @include tablet {
+        flex-direction: row;
+        font-size: $medium-font-size;
+        padding: $medium-padding;
+    }
+
+    @include desktop {
+        flex-direction: row;
+        font-size: $medium-font-size;
+        padding: $large-padding;
+    }
+
+    .creator {
+        font-weight: 900;
+    }
+}
