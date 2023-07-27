@@ -5,3 +5,4 @@
 3. JSX -> JavaScript XML
 4. React without CDN
 5. React Components
+6. Props and Maps
