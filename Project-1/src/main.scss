@@ -72,6 +72,11 @@ $marker-color: rgb(100, 211, 255);
     position: relative;
     min-width: 450px;
 
+    &.dark {
+        background-color: white;
+        color: black;
+    }
+
     @include desktop {
         width: 100%;
         max-width: 75rem;
@@ -109,6 +114,33 @@ $marker-color: rgb(100, 211, 255);
 
         @include desktop {
             font-size: $large-font-size;
+        }
+    }
+
+    .mode__container {
+        display: flex;
+        gap: 10px;
+
+        .mode__light,
+        .mode__dark {
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .mode__light {
+            opacity: 0.4;
+
+            &.dark {
+                opacity: 1;
+            }
+        }
+
+        .mode__dark {
+            opacity: 0.4;
+
+            &.dark {
+                opacity: 1;
+            }
         }
     }
 }
@@ -184,5 +216,38 @@ $marker-color: rgb(100, 211, 255);
 
     .creator {
         font-weight: 900;
+    }
+}
+
+// Dark Mode slider 
+.dark__mode__slider {
+    width: 55px;
+    height: 25px;
+    border-radius: $border-radius + 5px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &.dark {
+        background-color: black;
+
+        &::after {
+            background-color: white;
+            left: 55%;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+        background-color: black;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
     }
 }
