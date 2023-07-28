@@ -1,0 +1,19 @@
+.navbar {
+    width: 100%;
+    color: $white;
+    padding: $small-padding;
+    background: $background;
+
+    &__container {
+        @extend .container;
+        @include flex(space-between, center);
+    }
+
+    &__left {
+        @include flex(center, center, $small-gap);
+
+        img {
+            width: $logo-width;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+input {
+    width: 100%;
+    padding: $small-padding $base-padding;
+    border: 1px solid gray;
+    font-size: $base-font-size;
+}
+
+input:focus {
+    border: 2px solid gray;
+}

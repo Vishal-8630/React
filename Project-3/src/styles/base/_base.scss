@@ -1,0 +1,50 @@
+*, 
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3, 
+h4 {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.8px;
+}
+
+h1 {
+    font-size: $base-font-size;
+
+    @include tablet {
+        font-size: $medium-font-size;
+    }
+
+    @include desktop {
+        font-size: $large-font-size;
+    }
+}
+
+h3 {
+    font-size: $small-font-size;
+
+    @include tablet {
+        font-size: $base-font-size;
+    }
+    
+    @include desktop {
+        font-size: $medium-font-size;
+    }
+}
+
+input,
+button {
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    border-radius: $border-radius;
+}
+
+button {
+    cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.btn {
+    width: 100%;
+    font-size: $medium-font-size;
+    background: $background;
+    color: $white;
+    font-weight: 900;
+    padding: $small-padding;
+    border: none;
+
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    box-shadow: $box-shadow;
+}

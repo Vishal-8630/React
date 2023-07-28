@@ -1,0 +1,47 @@
+.form {
+    @include flex(center, center, $medium-gap * 2, column);
+    margin-top: $large-margin * 3;
+
+    &__inputs {
+        @include flex(center, center, $large-gap, column);
+        width: 90%;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__button {
+        width: 90%;
+    }
+}
+
+.result {
+    @include flex(center, center);
+    margin: $large-margin $large-margin;
+    position: relative;
+
+    .meme__img {
+        width: 100%;
+        border-radius: $border-radius;
+    }
+
+    .top__text,
+    .bottom__text {
+        position: absolute;
+        font-size: $large-font-size * 1.5;
+        color: $white;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .top__text {
+        top: 0;
+        margin-top: 10px;
+    }
+
+    .bottom__text {
+        bottom: 0;
+        margin-bottom: 10px;
+    }
+}

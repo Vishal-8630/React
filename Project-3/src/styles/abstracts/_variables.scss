@@ -1,0 +1,45 @@
+
+// Font sizes
+$small-font-size: 1rem;
+$base-font-size: 1.3rem;
+$medium-font-size: 1.6rem;
+$large-font-size: 2rem;
+
+// Margin and Padding
+$small-padding: 0.5em;
+
+$base-margin: 1.2em;
+$base-padding: 1.2em;
+
+$medium-margin: 1.6em;
+$medium-padding: 1.6em;
+
+$large-margin: 2em;
+$large-padding: 2em;
+
+// Flex gaps
+$small-gap: 0.8em;
+$base-gap: 1.2em;
+$medium-gap: 1.5em;
+$large-gap: 2em;
+
+// Colors
+$dark-purple: purple;
+$light-purple: rgb(255, 35, 255);
+$black: black;
+$white: white;
+
+// Background
+$background: linear-gradient(to right, $dark-purple, $light-purple);
+
+// Border Radius
+$border-radius: 3px;
+
+// Breakpoints
+$breakpoint-tablet: 650px;
+$breakpoint-desktop: 1200px;
+
+$logo-width: 80px;
+
+// Box Shadow
+$box-shadow: 1px 1px 5px purple;

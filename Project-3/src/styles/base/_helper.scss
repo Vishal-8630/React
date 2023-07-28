@@ -1,0 +1,17 @@
+
+// Clearfix for inner floats
+.group::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+// Container 
+.container {
+    max-width: 60rem;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $base-padding;
+    padding-right: $base-padding;
+}
